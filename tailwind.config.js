@@ -6,5 +6,5 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
 
-  plugins: ['daisyui'],
+  plugins: [require('daisyui')],
 };

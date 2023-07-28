@@ -15,7 +15,7 @@ export default async function ProductPage({ params: { id } }: ProductPageProps) 
   if (!product) notFound();
 
   return (
-    <div className="flex flex-col lg:flex-row">
+    <div className="flex flex-col lg:flex-row gap-4">
       <Image
         src={product.imageUrl}
         alt={product.name}
@@ -26,7 +26,8 @@ export default async function ProductPage({ params: { id } }: ProductPageProps) 
 
       <div>
         <h1 className="text-5xl font-bold">{product.name}</h1>
-        <PriceTag price={}></PriceTag>
+        <PriceTag price={product.price} className="mt-4"></PriceTag>
+        <p className="py-6">{product.description}</p>
       </div>
     </div>
   );

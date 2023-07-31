@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import "./globals.css";
 import Navbar from "./Navbar/Navbar";
 import type { Metadata } from "next";
@@ -22,6 +23,7 @@ export default function RootLayout({
         <main className="m-auto  min-w-[300px] max-w-7xl p-4">
           <div>{children}</div>
         </main>
+        <Footer></Footer>
       </body>
     </html>
   );

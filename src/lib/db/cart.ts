@@ -11,6 +11,10 @@ export type ShoppingCart = CartWithProducts & {
   subtotal: number;
 };
 
+export type CartItemWthProduct = Prisma.CartItemGetPayload<{
+  include: { product: true };
+}>;
+
 export async function getCart(): Promise<ShoppingCart | null> {
   const localCartId = cookies().get("localCartId")?.value;
   const cart = localCartId

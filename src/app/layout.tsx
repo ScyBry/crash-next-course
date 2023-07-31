@@ -1,19 +1,25 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import "./globals.css";
+import Navbar from "./Navbar/Navbar";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Flowmazon',
-  description: 'Tutorial project',
+  title: "Flowmazon",
+  description: "Tutorial project",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="p-4  max-w-7xl m-auto min-w-[300px]">
+        <Navbar></Navbar>
+        <main className="m-auto  min-w-[300px] max-w-7xl p-4">
           <div>{children}</div>
         </main>
       </body>
